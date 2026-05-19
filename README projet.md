@@ -1,3 +1,5 @@
+# README projet
+
 # Frontguys Brand OS
 
 > **Le repo source de vérité pour produire des assets Frontguys avec Claude** — pages web, présentations, articles, posts — qui respectent à 100% l'identité, la voix, le visuel et les composants Frontguys.
@@ -22,7 +24,7 @@ Exemples :
 
 ### 3. Claude consulte les bonnes sources
 
-L'agent principal (`CLAUDE.md`) **route automatiquement** vers les bonnes parties du repo :
+L'agent principal (page **Agent principal**) **route automatiquement** vers les bonnes parties du repo :
 
 * Voix Frontguys → `brand/voice/`
 * Identité, personas, positionnement → `brand/identity/`

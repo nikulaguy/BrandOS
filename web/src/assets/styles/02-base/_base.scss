@@ -1,0 +1,354 @@
+@use "../01-utils/mixins/text-styles";
+@use "../01-utils/mixins/mixins";
+
+/* ======================================================================================== */
+/* Base | Default, single element selectors that will look the same regardless of location. */
+/* ======================================================================================== */
+
+html {
+  min-height: 100vh;
+  text-size-adjust: 100%;
+  font-size: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: light dark;
+}
+
+/* Make scrollbars black */
+/* https://twitter.com/diegohaz/status/1529543787311144961 */
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+/* --------------------------------- */
+/* GENERAL SETTINGS                  */
+/* --------------------------------- */
+
+body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: "Reddit Sans Regular";
+  color: var(--semantic-foreground-default);
+  background-color: var(--semantic-background-default);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (prefers-reduced-motion: no-preference) {
+    & {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+:focus-visible {
+	outline: var(--focus-ring);
+	outline-offset: var(--focus-ring-offset);
+}
+
+::selection {
+  color: var(--semantic-foreground-default-invert);
+  background: var(--semantic-background-accent);
+}
+
+:where(label):has(+ :where(textarea, input, select)) {
+  display: block;
+}
+
+:where([type="search"]) {
+  -webkit-appearance: textfield;
+}
+
+/* iOS only */
+@supports (-webkit-touch-callout: none) {
+  :where([type="search"]) {
+    border: 1px solid -apple-system-secondary-label;
+    background-color: canvas;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+strong {
+  font-weight: 600;
+}
+
+img,
+video {
+  height: auto;
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+main {
+  overflow-x: hidden;
+
+	& > section {
+		padding-block: var(--section-padding-block);
+		padding-inline: var(--page-padding-x);
+	}
+}
+
+a:not([class]),
+.a-link {
+  --color: var(--semantic-foreground-interactive);
+
+  color: var(--color);
+  text-decoration: underline;
+  text-underline-position: from-font;
+
+  &[aria-current="page"],
+  &:hover {
+    --color: var(--semantic-foreground-interactive-hover);
+    text-decoration-line: underline;
+  }
+}
+
+legend {
+  padding: 0;
+}
+
+input[type="checkbox"] {
+  margin: 0;
+}
+
+blockquote:not([class]) {
+  display: flex;
+  flex-direction: column;
+  text-wrap: balance;
+  max-block-size: 100%;
+  font-style: italic;
+  padding: var(--base-space-4);
+  background-color: var(--semantic-background-default-alt);
+  border-radius: var(--radius-medium);
+  gap: var(--base-space-2);
+
+  p:not(:has(cite)) {
+    @include text-styles.text-body-1;
+
+    &::before {
+      content: "« ";
+    }
+
+    &::after {
+      content: " »";
+    }
+  }
+
+  cite {
+    @include text-styles.text-caption-1;
+  }
+}
+
+address,
+cite {
+  font-style: normal;
+}
+
+abbr {
+  text-underline-position: from-font;
+}
+
+fieldset {
+  width: 100%;
+  border: none;
+  padding: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+
+  & > *:not(.m-button) {
+    width: 100%;
+  }
+}
+
+textarea {
+  @include text-styles.text-body-2;
+  resize: vertical;
+  padding-top: var(--base-space-2);
+
+  &::placeholder {
+    color: var(--semantic-foreground-subtle);
+  }
+}
+
+.grid {
+	--max-cols-per-row: 3;
+	--col-min-width: 20rem; // 320px
+	--col-gap: var(--base-space-4);
+	--row-gap: var(--section-gap);
+
+  /** Do not override these variables */
+  /* maximum space occupied by gaps on a single row */
+  --max-row-gaps: calc((var(--max-cols-per-row) - 1) * var(--col-gap));
+  /* maximum theoretical width of a column to respect the quota */
+  --col-max-width: calc((100% - var(--max-row-gaps)) / var(--max-cols-per-row));
+
+  display: grid;
+  column-gap: var(--col-gap);
+  row-gap: var(--row-gap);
+  width: 100%;
+
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(
+			max(min(100%, var(--col-min-width)), var(--col-max-width)),
+			1fr
+		)
+	);
+
+	@media screen and (width >= 47.5rem) {
+		--cell-padding: var(--base-space-4);
+	}
+
+  & > *:not(.o-card) {
+    padding-inline: var(--cell-padding);
+  }
+
+  &:is(ul, ol) {
+    padding-inline: 0;
+    margin-block: 0;
+    list-style: none;
+  }
+}
+
+a:has(.a-logo) {
+  display: inline-flex;
+}
+
+code {
+	@include text-styles.text-code;
+}
+
+/* --------------------------------- */
+/* Markdown styles                   */
+/* --------------------------------- */
+.prose {
+  // Text styles
+  h2 {
+    @include text-styles.text-heading-3;
+  }
+
+  h3 {
+    @include text-styles.text-heading-4;
+  }
+
+  h4 {
+    @include text-styles.text-heading-6;
+  }
+
+  h5 {
+    @include text-styles.text-caption-1;
+  }
+
+	h6 {
+    @include text-styles.text-caption-2;
+  }
+
+  p,
+  a,
+  ul,
+  ol,
+  figcaption,
+	address {
+    @include text-styles.text-body-1;
+  }
+
+  // Margins
+  --margin-top-h2: var(--base-space-9);
+  --margin-bottom-h2: var(--base-space-8);
+  --margin-top-h3: var(--base-space-8);
+  --margin-bottom-h3: var(--base-space-4);
+  --margin-top-h4: var(--base-space-4);
+  --margin-bottom-h4: var(--base-space-2);
+  --margin-top-h5: var(--base-space-4);
+  --margin-bottom-h5: 0;
+
+  h2 {
+    margin-bottom: var(--margin-bottom-h2);
+
+    &:not(:first-child) {
+      margin-top: var(--margin-top-h2);
+    }
+  }
+
+  h3 {
+    margin-bottom: var(--margin-bottom-h3);
+
+    &:not(:first-child) {
+      margin-top: var(--margin-top-h3);
+    }
+  }
+
+  h4 {
+    margin-bottom: var(--margin-bottom-h4);
+
+    &:not(:first-child) {
+      margin-top: var(--margin-top-h4);
+    }
+  }
+
+  h5 {
+    margin-bottom: var(--margin-bottom-h5);
+
+    &:not(:first-child) {
+      margin-top: var(--margin-top-h5);
+    }
+  }
+
+  :is(:not(blockquote) > p, ol, ul, address) + :is(p, ol, ul, address) {
+		margin-top: var(--base-space-4);
+	}
+
+  li + li {
+    margin-top: var(--base-space-1);
+  }
+
+  p:has(:is(img, picture, video)) {
+    margin-top: var(--base-space-8);
+    margin-bottom: var(--base-space-8);
+  }
+
+  blockquote {
+    &:not(:first-child) {
+      margin-top: var(--base-space-6);
+    }
+
+    & + :is(p, ol, ul) {
+      margin-top: var(--base-space-4);
+    }
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+
+	@media screen and (width >= 47.5rem) {
+		--margin-top-h2: 		var(--base-space-18);
+		--margin-bottom-h2: var(--base-space-12);
+		--margin-top-h3: 		var(--base-space-12);
+		--margin-bottom-h3: var(--base-space-8);
+		// --margin-top-h4: 		var(--base-space-4);
+		// --margin-bottom-h4: var(--base-space-2);
+		// --margin-top-h5: 		var(--base-space-4);
+		// --margin-bottom-h5: var(--base-space-0);
+	}
+}

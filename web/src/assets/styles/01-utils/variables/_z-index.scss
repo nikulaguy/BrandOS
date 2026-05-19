@@ -1,0 +1,30 @@
+// ----------------------
+// Variables / Z-index
+// ----------------------
+
+/// SportEasy.net's z-index scale. Z-index values should always be defined in z-index.scss. This
+/// allows us to at a glance determine relative layers of our application and prevents bugs
+/// arrising from arbitrary z-index values. Do not edit the z-index scale! Only add application
+/// scoped z-index values.
+///
+
+// Z-Index Scale (private vars)
+// --------------------------------------
+:root {
+  --z-index-base: 10;
+  --z-index-1: calc(1 * var(--z-index-base));
+  --z-index-2: calc(2 * var(--z-index-base));
+  --z-index-3: calc(3 * var(--z-index-base));
+  --z-index-4: calc(4 * var(--z-index-base));
+  --z-index-5: calc(5 * var(--z-index-base));
+  --z-index-6: calc(6 * var(--z-index-base));
+  --z-index-7: calc(7 * var(--z-index-base));
+  --z-index-8: calc(8 * var(--z-index-base));
+  --z-index-9: calc(9 * var(--z-index-base));
+  --z-index-10: calc(10 * var(--z-index-base));
+
+  // Z-Index Applications
+  // --------------------------------------
+  --z-index-header: var(--z-index-1);
+  --z-index-skip-links: calc(var(--z-index-header) + var(--z-index-base));
+}

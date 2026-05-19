@@ -1,0 +1,122 @@
+@use "mixins/mixins" as *;
+
+// ----------------------
+// == Utility Classes
+// ----------------------
+
+// Apply these classes on element only when
+// the rule you want to set is independant from
+// the rest of your element style.
+// Using '!important' here is recommanded
+
+.u-absolute-center {
+  @include absolute-center;
+}
+
+// Visually hide content, leaving it accessible to screenreaders and ATs.
+// https://www.ffoodd.fr/masquage-accessible-de-pointe/
+.u-visually-hidden,
+.u-visually-hidden-focusable:not(:focus, :focus-within) {
+  border: 0 !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+.u-visually-hidden:not(caption),
+.u-visually-hidden-focusable:not(caption):not(:focus, :focus-within) {
+  position: absolute !important;
+}
+
+.u-visually-hidden *,
+.u-visually-hidden-focusable:not(:focus, :focus-within) * {
+  overflow: hidden !important;
+}
+
+.u-list-reset {
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.u-list-style\:none {
+  list-style: none;
+}
+
+.u-text-align\:center {
+  text-align: center;
+}
+
+.u-text-wrap\:balance {
+  text-wrap: balance;
+}
+
+.u-overflow\:hidden {
+  overflow: hidden !important;
+}
+
+.u-pointer-events\:none {
+  pointer-events: none !important;
+}
+
+.u-display\:none {
+  display: none !important;
+}
+
+.u-display\:block {
+  display: block !important;
+}
+
+.u-display\:block\:md {
+  @media screen and (width >= 47.5rem) {
+    display: block !important;
+  }
+}
+
+.u-full-width {
+  width: 100% !important;
+}
+
+.u-full-bleed {
+  width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+}
+
+.u-margin-left\:auto {
+  margin-left: auto !important;
+}
+
+.u-margin-inline-end\:auto {
+  margin-inline-end: auto !important;
+}
+
+.u-align-self\:flex-end {
+  align-self: flex-end !important;
+}
+
+.u-align-self\:center {
+  align-self: center !important;
+}
+
+.u-max-width\:100\% {
+  max-width: 100% !important;
+}
+
+.u-content-centered-small {
+  max-inline-size: var(--content-prose-max-width);
+  margin-inline: auto;
+}
+
+.u-content-centered {
+  max-inline-size: var(--content-max-width); // 1440px
+  margin-inline: auto;
+}
+
+.u-bordered {
+  --border-color: var(--semantic-border-subtle);
+  border: 1px solid var(--border-color);
+}

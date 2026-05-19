@@ -1,0 +1,39 @@
+{
+	"name": "frontguys-brandos-web",
+	"type": "module",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Sandbox Astro pour prototyper des pages Frontguys depuis Figma — pilier code du Brand OS.",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"build-tokens": "tz build",
+		"format": "biome format --write",
+		"lint": "biome lint --write",
+		"sync-from-prod": "bash scripts/sync-from-prod.sh"
+	},
+	"dependencies": {
+		"@astrojs/react": "^5.0.1",
+		"astro": "^6.0.8",
+		"class-variance-authority": "^0.7.1",
+		"react": "^19.2.4",
+		"react-dom": "^19.2.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.8",
+		"@terrazzo/cli": "^2.0.0",
+		"@terrazzo/plugin-css": "^2.0.0",
+		"@types/react": "^19.2.14",
+		"@types/react-dom": "^19.2.3",
+		"culori": "^4.0.2",
+		"sass": "^1.98.0",
+		"typescript": "^6.0.2",
+		"typescript-plugin-css-modules": "^5.2.0"
+	},
+	"packageManager": "pnpm@10.30.2",
+	"engines": {
+		"node": ">=22"
+	}
+}

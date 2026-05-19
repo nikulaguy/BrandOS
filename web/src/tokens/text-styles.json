@@ -1,0 +1,271 @@
+{
+	"fontStack": {
+		"system": {
+			"$value": [
+				"-apple-system",
+				"BlinkMacSystemFont",
+				"Segoe UI",
+				"Noto Sans",
+				"Helvetica",
+				"Arial",
+				"sans-serif",
+				"Apple Color Emoji",
+				"Segoe UI Emoji"
+			],
+			"$type": "fontFamily"
+		},
+		"sansSerif": {
+			"$value": ["Reddit Sans"],
+			"$type": "fontFamily"
+		},
+		"monospace": {
+			"$value": [
+				"Fragment Mono",
+				"ui-monospace",
+				"SFMono-Regular",
+				"SF Mono",
+				"Menlo",
+				"Consolas",
+				"Liberation Mono",
+				"monospace"
+			],
+			"$type": "fontFamily"
+		}
+	},
+	"text": {
+		"Heading 1": {
+			"$type": "typography",
+			"$value": {
+				"fontFamily": "{fontStack.sansSerif}",
+				"fontWeight": 500,
+				"fontSize": {
+					"value": 48,
+					"unit": "px"
+				},
+				"letterSpacing": {
+					"value": 0,
+					"unit": "px"
+				},
+				"lineHeight": 1.4
+			},
+			"$description": "",
+			"$extensions": {}
+		},
+		"Heading 2": {
+			"$type": "typography",
+			"$value": {
+				"fontFamily": "{fontStack.sansSerif}",
+				"fontWeight": 500,
+				"fontSize": {
+					"value": 40,
+					"unit": "px"
+				},
+				"letterSpacing": {
+					"value": 0,
+					"unit": "px"
+				},
+				"lineHeight": 1.2
+			},
+			"$description": "",
+			"$extensions": {}
+		},
+		"Heading 3": {
+			"$type": "typography",
+			"$value": {
+				"fontFamily": "{fontStack.sansSerif}",
+				"fontWeight": 500,
+				"fontSize": {
+					"value": 32,
+					"unit": "px"
+				},
+				"letterSpacing": {
+					"value": 0,
+					"unit": "px"
+				},
+				"lineHeight": 1.2
+			},
+			"$description": "",
+			"$extensions": {}
+		},
+		"Heading 4": {
+			"$type": "typography",
+			"$value": {
+				"fontFamily": "{fontStack.sansSerif}",
+				"fontWeight": 600,
+				"fontSize": {
+					"value": 24,
+					"unit": "px"
+				},
+				"letterSpacing": {
+					"value": 0,
+					"unit": "px"
+				},
+				"lineHeight": 1.4
+			},
+			"$description": "",
+			"$extensions": {}
+		},
+		"Heading 5": {
+			"$type": "typography",
+			"$value": {
+				"fontFamily": "{fontStack.sansSerif}",
+				"fontWeight": 700,
+				"fontSize": {
+					"value": 20,
+					"unit": "px"
+				},
+				"letterSpacing": {
+					"value": 0,
+					"unit": "px"
+				},
+				"lineHeight": 1.4
+			},
+			"$description": "",
+			"$extensions": {}
+		},
+		"Heading 6": {
+			"$type": "typography",
+			"$value": {
+				"fontFamily": "{fontStack.sansSerif}",
+				"fontWeight": 700,
+				"fontSize": {
+					"value": 18,
+					"unit": "px"
+				},
+				"letterSpacing": {
+					"value": 0,
+					"unit": "px"
+				},
+				"lineHeight": 1.4
+			},
+			"$description": "",
+			"$extensions": {}
+		},
+		"Subtitle": {
+			"$type": "typography",
+			"$value": {
+				"fontFamily": "{fontStack.sansSerif}",
+				"fontWeight": 400,
+				"fontSize": {
+					"value": 20,
+					"unit": "px"
+				},
+				"letterSpacing": {
+					"value": 0,
+					"unit": "px"
+				},
+				"lineHeight": 1.4
+			},
+			"$description": "",
+			"$extensions": {}
+		},
+		"Surtitle": {
+			"$type": "typography",
+			"$value": {
+				"fontFamily": "{fontStack.sansSerif}",
+				"fontWeight": 400,
+				"fontSize": {
+					"value": 16,
+					"unit": "px"
+				},
+				"letterSpacing": {
+					"value": 0,
+					"unit": "px"
+				},
+				"lineHeight": 1.55
+			},
+			"$description": "",
+			"$extensions": {}
+		},
+		"Body 1": {
+			"$type": "typography",
+			"$value": {
+				"fontFamily": "{fontStack.sansSerif}",
+				"fontWeight": 400,
+				"fontSize": {
+					"value": 18,
+					"unit": "px"
+				},
+				"letterSpacing": {
+					"value": 0,
+					"unit": "px"
+				},
+				"lineHeight": 1.65
+			},
+			"$description": "",
+			"$extensions": {}
+		},
+		"Body 2": {
+			"$type": "typography",
+			"$value": {
+				"fontFamily": "{fontStack.sansSerif}",
+				"fontWeight": 400,
+				"fontSize": {
+					"value": 16,
+					"unit": "px"
+				},
+				"letterSpacing": {
+					"value": 0,
+					"unit": "px"
+				},
+				"lineHeight": 1.6
+			},
+			"$description": "",
+			"$extensions": {}
+		},
+		"Caption 1": {
+			"$type": "typography",
+			"$value": {
+				"fontFamily": "{fontStack.sansSerif}",
+				"fontWeight": 500,
+				"fontSize": {
+					"value": 14,
+					"unit": "px"
+				},
+				"letterSpacing": {
+					"value": 0,
+					"unit": "px"
+				},
+				"lineHeight": 1.4
+			},
+			"$description": "",
+			"$extensions": {}
+		},
+		"Caption 2": {
+			"$type": "typography",
+			"$value": {
+				"fontFamily": "{fontStack.sansSerif}",
+				"fontWeight": 400,
+				"fontSize": {
+					"value": 12,
+					"unit": "px"
+				},
+				"letterSpacing": {
+					"value": 0,
+					"unit": "px"
+				},
+				"lineHeight": 1.4
+			},
+			"$description": "",
+			"$extensions": {}
+		},
+		"Code": {
+			"$type": "typography",
+			"$value": {
+				"fontFamily": "{fontStack.monospace}",
+				"fontWeight": 400,
+				"fontSize": {
+					"value": 16,
+					"unit": "px"
+				},
+				"letterSpacing": {
+					"value": 0,
+					"unit": "px"
+				},
+				"lineHeight": 1.5
+			},
+			"$description": "",
+			"$extensions": {}
+		}
+	}
+}

@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+	title="BrandOS · pilier code Frontguys"
+	description="Sandbox Astro pour prototyper des pages Frontguys depuis Figma."
+>
+	<main class="l-main">
+		<h1>BrandOS · pilier code</h1>
+		<p>
+			Sandbox Astro pour prototyper des pages Frontguys depuis des frames Figma,
+			en s'appuyant sur les composants et les tokens du DS Frontguys.
+		</p>
+
+		<h2>Prototypes</h2>
+		<p>
+			Toutes les pages générées depuis Figma vivent dans
+			<code>src/pages/prototypes/</code>. Aucun prototype n'est encore créé.
+		</p>
+
+		<h2>Ressources</h2>
+		<ul>
+			<li>
+				<a href="https://github.com/nikulaguy/BrandOS"
+					>Repo GitHub nikulaguy/BrandOS</a
+				>
+			</li>
+			<li>
+				<code>web/CLAUDE.md</code> — sous-agent IA pour ce pilier
+			</li>
+			<li>
+				<code>web/docs/workflow.md</code> — workflow Figma → Astro
+			</li>
+			<li>
+				<code>web/docs/figma-to-astro-mapping.md</code> — mapping composants
+			</li>
+			<li>
+				<code>web/docs/tokens.md</code> — doc tokens
+			</li>
+		</ul>
+	</main>
+</BaseLayout>
+
+<style lang="scss">
+	.l-main {
+		max-width: 48rem;
+		margin-inline: auto;
+		padding: var(--base-space-6, 2rem) var(--base-space-4, 1rem);
+	}
+</style>

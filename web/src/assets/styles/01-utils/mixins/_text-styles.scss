@@ -1,0 +1,93 @@
+@forward "../variables/tokens";
+
+@mixin text-heading-1 {
+  font-family: "Reddit Sans Medium";
+  font-size: var(--text-heading-1-font-size);
+  line-height: var(--text-heading-1-line-height);
+  font-weight: var(--text-heading-1-font-weight);
+}
+
+@mixin text-heading-2 {
+  font-family: "Reddit Sans Medium";
+  font-size: clamp(var(--text-heading-2-font-size), 4vw + 1rem, 3.5rem);
+  line-height: var(--text-heading-2-line-height);
+  font-weight: var(--text-heading-2-font-weight);
+}
+
+@mixin text-heading-3 {
+  font-family: "Reddit Sans Medium";
+  font-size: var(--text-heading-3-font-size);
+  line-height: var(--text-heading-3-line-height);
+  font-weight: var(--text-heading-3-font-weight);
+}
+
+@mixin text-heading-4 {
+  font-family: "Reddit Sans SemiBold";
+  font-size: var(--text-heading-4-font-size);
+  line-height: var(--text-heading-4-line-height);
+  font-weight: var(--text-heading-4-font-weight);
+}
+
+@mixin text-heading-5 {
+  font-family: "Reddit Sans Bold";
+  font-size: var(--text-heading-5-font-size);
+  line-height: var(--text-heading-5-line-height);
+  font-weight: var(--text-heading-5-font-weight);
+}
+
+@mixin text-heading-6 {
+  font-family: "Reddit Sans Bold";
+  font-size: var(--text-heading-6-font-size);
+  line-height: var(--text-heading-6-line-height);
+  font-weight: var(--text-heading-6-font-weight);
+}
+
+@mixin text-subtitle {
+  font-family: "Reddit Sans Regular";
+  font-size: var(--text-subtitle-font-size);
+  line-height: var(--text-subtitle-line-height);
+  font-weight: var(--text-subtitle-font-weight);
+}
+
+@mixin text-surtitle {
+  font-family: "Reddit Sans Regular";
+  font-size: var(--text-surtitle-font-size);
+  line-height: var(--text-surtitle-line-height);
+  font-weight: var(--text-surtitle-font-weight);
+	text-transform: uppercase;
+}
+
+@mixin text-body-1 {
+  font-family: "Reddit Sans Regular";
+  font-size: var(--text-body-1-font-size);
+  line-height: var(--text-body-1-line-height);
+  font-weight: var(--text-body-1-font-weight);
+}
+
+@mixin text-body-2 {
+  font-family: "Reddit Sans Regular";
+  font-size: var(--text-body-2-font-size);
+  line-height: var(--text-body-2-line-height);
+  font-weight: var(--text-body-2-font-weight);
+}
+
+@mixin text-caption-1 {
+  font-family: "Reddit Sans Medium";
+  font-size: var(--text-caption-1-font-size);
+  line-height: var(--text-caption-1-line-height);
+  font-weight: var(--text-caption-1-font-weight);
+}
+
+@mixin text-caption-2 {
+  font-family: "Reddit Sans Regular";
+  font-size: var(--text-caption-2-font-size);
+  line-height: var(--text-caption-2-line-height);
+  font-weight: var(--text-caption-2-font-weight);
+}
+
+@mixin text-code {
+  font-family: var(--font-stack-monospace);
+  font-size: var(--text-code-font-size);
+  line-height: var(--text-code-line-height);
+  font-weight: var(--text-code-font-weight);
+}

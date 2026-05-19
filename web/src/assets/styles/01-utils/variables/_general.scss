@@ -1,0 +1,67 @@
+@use "../functions/sizing" as *;
+@use "../variables/spacing" as *;
+
+// ----------------------
+// == Variables / General
+// ----------------------
+
+:root {
+	/// ---------------------
+	/// STYLE
+	/// ---------------------
+	--radius-small: 0.25rem; // 4px
+	--radius-medium: 0.5rem; // 8px
+	--radius-large: 0.75rem; // 12px
+	--radius-circular: 999px; // 100%
+
+	// Custom
+	--header-height: clamp(
+											var(--base-space-24),
+											#{clamp-preferred-value($base-space-24, $base-space-32)},
+											var(--base-space-32)
+										);
+
+	--page-padding-x: clamp(
+											var(--base-space-4),
+											#{clamp-preferred-value($base-space-4, $base-space-8)},
+											var(--base-space-8)
+										);
+
+	--interactive-element-height: var(--base-space-12);
+	--interactive-element-height-large: var(--base-space-17);
+	--interactive-element-height-small: var(--base-space-8);
+	--interactive-element-border-radius: var(--radius-medium);
+
+	--input-padding: var(--base-space-4);
+	--input-border-color: var(--semantic-border-default);
+	--input-border-color-focus: var(--semantic-border-interactive-active);
+	--input-border: 1px solid var(--input-border-color);
+
+	--focus-ring-offset: 0.1875rem; // 3px
+	--focus-ring-width: 0.125rem; // 2px
+	--focus-ring-color: var(--semantic-border-interactive);
+	--focus-ring: var(--focus-ring-width) solid var(--focus-ring-color);
+
+	--layout-max-width: 90rem; // 1440px
+	--content-max-width: calc(var(--layout-max-width) - 2 * var(--base-space-24)); // 80rem
+	--content-prose-max-width: calc(var(--layout-max-width) / 2); // 45rem
+
+	--section-padding-block: clamp(
+															var(--base-space-9),
+															#{clamp-preferred-value($base-space-9, $base-space-18)},
+															var(--base-space-18)
+														);
+	--section-gap: clamp(
+										var(--base-space-8),
+										#{clamp-preferred-value($base-space-8, $base-space-14)},
+										var(--base-space-14)
+									);
+	--logo-width: #{clamp-value(130px, 197px)};
+	--logo-frontguys-brand: var(--semantic-brand-primary);
+	--logo-frontguys-dot: var(--semantic-brand-secondary);
+	--logo-frontguys-a11y: var(--semantic-brand-complementary);
+
+	--media-aspect-ratio: 4 / 3;
+	--card-photo-aspect-ratio: 16 / 9;
+	--avatar-width: var(--base-space-22);
+}

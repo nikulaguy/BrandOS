@@ -1,0 +1,88 @@
+/* Inspired by: https://heydonworks.com/article/testing-html-with-modern-css/ */
+#root {
+  --error-outline: 0.25rem solid red;
+  
+  a:not([href]) {
+    outline: var(--error-outline);
+    --error: 'The link does not have an href. Did you mean to use a <button>?';
+  }
+
+  a[disabled] {
+    outline: var(--error-outline);
+    --error-anchor-disabled: 'The disabled property is not valid on anchors (links). Did you mean to use a <button>?';
+  }
+
+  :is(ul, ol) > *:not(li) {
+    outline: var(--error-outline);
+    --error-list-child: 'Only <li> can be a direct child of <ul> or <ol>'.
+  }
+  
+  img:not([alt]) {
+    outline: var(--error-outline);
+    --error-alt-img: '<img> tag must alwaus have an alt attribute'
+  }
+
+  [tabindex]:not([tabindex="0"]):not([tabindex="-1"])::after {
+    outline: var(--error-outline);
+    --error-crazy-tabindexing: 'Do not disrupt the natural tab order.';
+  }
+  
+  :not(figure) > figcaption,
+  :not(fieldset) > legend,
+  :not(dl) > :is(dt, dd),
+  :not(tr) > :is(td, th),
+  :not(select) > :is(option, optgroup),
+  :not(table) > :is(thead, tfoot, tbody, tr, colgroup, caption) {
+    outline: var(--error-outline);
+    --error-forbidden-nesting: 'This element should not be nested inside its parent element';
+  }
+  
+  :is(b, i, q, em, abbr, cite, code, span, small, strong) > div {
+    outline: var(--error-outline);
+    --error-div-inside-inline: 'No divs inside inline elements';
+  }
+  
+  input:not([type="button"]):not([type="reset"]):not([type="submit"]):not([aria-labelledby], [id]),
+  textarea:not([aria-labelledby], [id]),
+  label:not([for]) {
+    outline: var(--error-outline);
+    --error-input-fields: 'Inputs fields should have a label';
+  }
+
+  input:not(form input) {
+    outline: var(--error-outline);
+    --error-input-orphan: 'The input is outside a <form> element. Users may benefit from <form> semantics and behaviors.'
+  }
+
+  :is(ul, ol, li):empty {
+    outline: var(--error-outline);
+    --error-empty-list: 'List and list elements should not be empty'
+  }
+
+  /*  */
+  details:not([aria-expanded]) {
+    outline: var(--error-outline);
+    --error-details-element: 'details elements without an aria-expanded attribute';
+  }
+
+  figcaption:empty {
+    padding: 0.5ex; /* give it some purchase */
+    outline: var(--error-outline);
+    --error-figcaption-empty: 'The figcaption is empty';
+  }
+
+  figure:not(:is([aria-label], [aria-labelledby])):not(:has(figcaption)) {
+    outline: var(--error-outline);
+    --error-no-figure-label: 'The figure is not labeled by any applicable method';
+  }
+  
+  figure > figcaption ~ figcaption {
+    outline: var(--error-outline);
+    --error-multiple-figcaptions: 'There are two figcaptions for one figure';
+  }
+
+  input:not(form input) {
+    outline: var(--warning-outline);
+    --error-input-orphan: 'The input is outside a <form> element. Users may benefit from <form> semantics and behaviors.'
+  }
+}

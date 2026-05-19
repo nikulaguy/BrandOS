@@ -1,0 +1,32 @@
+# Sources d'inspection — pas du contenu Brand OS
+references/
+
+# Clone externe du repo Gitlab frontguys/accessibility-website
+# (utilisé comme source de copie pour web/, jamais commité ici)
+SiteA11Y/
+
+# Pilier web (Astro) — artefacts générés
+web/node_modules/
+web/dist/
+web/.astro/
+web/.netlify/
+# Tokens générés par Terrazzo (régénérables via `pnpm build-tokens`)
+web/src/assets/styles/01-utils/variables/_tokens.scss
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Prompts de reprise / sessions Cowork
+cowork-resume-prompt.md
+*.session.md
+
+# Éditeur
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS / divers
+Thumbs.db
+*.log

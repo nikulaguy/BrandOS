@@ -1,0 +1,32 @@
+
+/**
+ * Calculate the value of a CSS clamp function based on the viewport width.
+ * Formula: https://clampcalculator.com/blog/css-clamp-fluid-formula-for-prefered-value
+ * @param {Number} $minSize - The minimum size of the value.
+ * @param {Number} $maxSize - The maximum size of the value.
+ * @param {Number} $minViewport - The minimum viewport width.
+ * @param {Number} $maxViewport - The maximum viewport width.
+ * @return {Number} The value of the CSS clamp function.
+ */
+
+
+ /**
+	* This solution works well in Chrome but Firefox seems to have issues with so many calculations.
+	* We need calc() because of CSS variables and the different units involved.
+	* For now we recommend using values in px
+	* For spacing values, use scss variables from _spacing.scss
+	*/
+@function clamp-value($minSize, $maxSize, $minViewport: 760px, $maxViewport: 1024px) {
+	$preferredValue: clamp-preferred-value($minSize, $maxSize, $minViewport, $maxViewport);
+
+  @return clamp($minSize, $preferredValue, $maxSize);
+}
+
+@function clamp-preferred-value($minSize, $maxSize, $minViewport: 760px, $maxViewport: 1024px) {
+  $sizeDiff: calc($maxSize - $minSize);
+  $viewportDiff: $maxViewport - $minViewport;
+  $slope: calc($sizeDiff / $viewportDiff);
+  $slopeVW: calc($slope * 100);
+  $intercept: calc($minSize - ($slope * $minViewport));
+  @return calc($intercept + $slopeVW * 1vw);
+}
